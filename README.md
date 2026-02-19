@@ -1,30 +1,33 @@
-<<<<<<< HEAD
-# capm_ex3_learningmanagementsystem
-Student Learning Management System-Udemy practice
-=======
-# Getting Started
+﻿# capm_ex3_learningmanagementsystem
 
-Welcome to your new project.
+Student Learning Management System - Udemy practice project
 
-It contains these folders and files, following our recommended project layout:
+## Getting Started
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+This is a CAP (Cloud Application Programming) project with a Student Management service.
 
+Project structure:
+- **app/** - UI5 Fiori applications
+- **db/** - Data models (Students entity)
+- **srv/** - OData services
 
-## Next Steps
+## Development
 
-- Open a new terminal and run `cds watch`
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
+Run locally with:
+```
+npm install
+cds watch
+```
 
+Then access the application at http://localhost:4004
 
-## Learn More
+## Deployment to SAP BTP
 
-Learn more at https://cap.cloud.sap/docs/get-started/.
->>>>>>> a0b417b (Initial commit - 22.09.2024)
+```
+npm install
+npx cds build --production
+mbt build
+cf deploy mta_archives/capm_ex3_learningmanagementsystem_1.0.0.mtar
+```
+
+For more information, see the [CAP Documentation](https://cap.cloud.sap/docs/get-started/)

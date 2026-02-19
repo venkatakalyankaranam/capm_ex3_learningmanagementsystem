@@ -1,5 +1,16 @@
 {
-  "scopes": [],
+  "xsappname": "capm_ex3_learningmanagementsystem",
+  "scopes": [
+    {
+      "name": "$ACCEPT_GRANTED_SCOPES",
+      "description": "Accept granted scopes"
+    }
+  ],
   "attributes": [],
-  "role-templates": []
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "Token exchange"
+    }
+  ]
 }
