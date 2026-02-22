@@ -2,19 +2,25 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "cds serve",
+      
+      "name": "cds run",      
       "request": "launch",
       "type": "node",
-      "cwd": "${workspaceFolder}",
+      "cwd": "${workspaceFolder}/${input : service}",
       "runtimeExecutable": "cds",
-      "args": [
-        "serve",
-        "--with-mocks",
-        "--in-memory?"
-      ],
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "console": "integratedTerminal",
+      "args": [ "serve",  "--with-mocks", "--in-memory?" ],
+      "skipFiles": [  "<node_internals>/**"  ]
+     
     }
-  ]
+  ],
+   "inputs" : [
+        {
+          "type": "pickString",
+          "id": "service",
+          "description": "SRV to Start",
+          "options": ["capm_ex3_learningmanagementsystem"],
+          "default": "capm_ex3_learningmanagementsystem"
+        }
+      ]
 }

@@ -1,5 +1,5 @@
 using StudentSrv as service from '../../srv/StudentService';
-annotate service.Students with @(
+annotate service.GetStudents with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
         Data : [

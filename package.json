@@ -25,11 +25,10 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "hana"
+        "kind": "sqlite"
       },
-      "auth": "xsuaa",
-      "[production]": {
-        "auth": "xsuaa"
+      "auth": {
+        "kind": "mocked"
       }
     }
   },
