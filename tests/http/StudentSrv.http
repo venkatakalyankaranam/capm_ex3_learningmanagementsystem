@@ -1,0 +1,51 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### GetStudents - With out Filter
+# @name GetStudents_GET
+GET {{server}}/odata/v4/student-srv/GetStudents
+Authorization: Basic {{username}}:{{password}}
+
+### GetStudents - Query
+# @name GetStudents_GET
+GET {{server}}/odata/v4/student-srv/GetStudents?$filter=email eq 'Venkatesh.Machineni@in.bosch.com'
+Authorization: Basic {{username}}:{{password}}
+
+
+### UpdateStudents
+# @name UpdateStudents_POST
+POST {{server}}/odata/v4/student-srv/UpdateStudents
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "email": "HG.Shivakumar@in.bosch.com",
+  "first_name": "Shiva Kumar",
+  "last_name": "H G",
+  "full_name": "",
+  "date_sign_up": "2026-02-21"
+}
+
+
+### UpdateStudents
+# @name GetStudents_PATCH
+PATCH {{server}}/odata/v4/student-srv/UpdateStudents('HG.Shivakumar@in.bosch.com')
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "email": "HG.Shivakumar@in.bosch.com",
+  "first_name": "Shiva Kumar",
+  "last_name": "H G",
+  "full_name": "Shivakumar HG",
+  "date_sign_up": "2026-02-13"
+}
+
+
+### GetStudents
+# @name GetStudents_DELETE
+DELETE {{server}}/odata/v4/student-srv/GetStudents/GetStudents-10370491
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

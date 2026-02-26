@@ -34,7 +34,6 @@ modules:
       buildpack: nodejs_buildpack
     requires:
       - name: kalyan-capm-hdi
-    
 
 resources:
   - name: capm_ex3_learningmanagementsystem-auth
@@ -55,4 +54,4 @@ resources:
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
-      service-plan: hdi-shared          
+      service-plan: hdi-shared
