@@ -43,9 +43,32 @@ Authorization: Basic {{username}}:{{password}}
   "date_sign_up": "2026-02-13"
 }
 
+###CreateStudents
 
-### GetStudents
-# @name GetStudents_DELETE
-DELETE {{server}}/odata/v4/student-srv/GetStudents/GetStudents-10370491
+# @name CreateStudents_POST
+POST {{server}}/odata/v4/student-srv/CreateStudents
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
+
+{
+  "email": "SailahariBrahmam.Mulleti@in.bosch.com",
+  "first_name": "Sailahari Brahmam",
+  "last_name": "Mulleti",
+  "full_name": "",
+  "date_sign_up": "2026-02-26"
+}
+
+
+### DeleteStudents
+# @name DeleteStudents_DELETE
+POST {{server}}/odata/v4/student-srv/DeleteStudents
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "email": "SailahariBrahmam.Mulleti@in.bosch.com",
+  "first_name": "Sailahari Brahmam",
+  "last_name": "Mulleti",
+  "full_name": "",
+  "date_sign_up": "2026-02-26"
+}
