@@ -57,10 +57,15 @@ module.exports = class StudentSrv extends cds.ApplicationService {
         });
 
 
-        // Before Creating the student record
+        //Before Creating the student record
         this.before("CREATE", CreateStudents, async (req, res) => {
-            if (!req.data.email) {
+            let sEmail = req.data.email;
+            if (!sEmail) {
                 req.reject(400, 'Email is mandatory');
+            }else if(sEmail !== "" && sEmail.trim().length > 0){ 
+                  if(sEmail.toLowerCase().indexOf("gmail") !== -1 ){
+                    req.reject(500, 'Personal Email is not allowed....');
+                  }
             }
         });
         //Create Students - Insert Students
@@ -123,3 +128,4 @@ module.exports = class StudentSrv extends cds.ApplicationService {
         return super.init()
     }
 }
+

@@ -51,11 +51,12 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "email": "SailahariBrahmam.Mulleti@in.bosch.com",
-  "first_name": "Sailahari Brahmam",
-  "last_name": "Mulleti",
+  "email": "ravi@gmail.com",
+  "first_name": "Ravi",
+  "last_name": "Y",
   "full_name": "",
-  "date_sign_up": "2026-02-26"
+  "date_sign_up": "2026-03-02",
+  "course_name": "SAP BTP CAPM"
 }
 
 
@@ -70,5 +71,6 @@ Authorization: Basic {{username}}:{{password}}
   "first_name": "Sailahari Brahmam",
   "last_name": "Mulleti",
   "full_name": "",
-  "date_sign_up": "2026-02-26"
+  "date_sign_up": "2026-02-26",
+  "course_name": "SAP BTP"
 }
