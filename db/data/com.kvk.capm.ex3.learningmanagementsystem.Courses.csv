@@ -1,0 +1,4 @@
+ID;course_name;course_url;course_duration;course_price;published_status
+1;SAPUI5;https://www.udemy.com/ui5;10.5;200.50;true
+2;SAPCAPM;https://www.udemy.com/capm;30.5;300.50;true
+3;NodeJS;https://www.udemy.com/nodejs;40.5;400.50;true
