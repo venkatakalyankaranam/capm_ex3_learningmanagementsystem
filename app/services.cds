@@ -1,2 +1,2 @@
 
-using from './studentdetails/annotations';
+using from './studentdetails/fiori-service';
