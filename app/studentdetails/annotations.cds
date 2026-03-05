@@ -20,6 +20,11 @@ annotate service.GetStudents with @(
             },
             {
                 $Type : 'UI.DataField',
+                Label : 'full_name',
+                Value : full_name,
+            },
+            {
+                $Type : 'UI.DataField',
                 Label : 'date_sign_up',
                 Value : date_sign_up,
             },

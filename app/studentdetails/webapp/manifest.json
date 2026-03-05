@@ -89,9 +89,14 @@
           "target": "StudentsList"
         },
         {
-          "pattern": "Students({key}):?query:",
+          "pattern": "GetStudents({key}):?query:",
           "name": "StudentsObjectPage",
           "target": "StudentsObjectPage"
+        },
+        {
+          "pattern": "GetStudents({key})/enrollment:?query:",
+          "name": "StudentEnrollmentDetails",
+          "target": "StudentEnrollmentDetails"
         }
       ],
       "targets": {
@@ -101,10 +106,10 @@
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "contextPath": "/Students",
+              "contextPath": "/GetStudents",
               "variantManagement": "Page",
               "navigation": {
-                "Students": {
+                "GetStudents": {
                   "detail": {
                     "route": "StudentsObjectPage"
                   }
@@ -127,7 +132,25 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Students"
+              "entitySet": "GetStudents",
+              "contextPath": "/GetStudents",
+              "navigation": {
+                "enrollment": {
+                  "detail": {
+                    "route": "StudentEnrollmentDetails"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "StudentEnrollmentDetails": {
+          "type": "Component",
+          "id": "StudentEnrollmentDetails",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {           
+              "entitySet": "GetEnrollments"              
             }
           }
         }
