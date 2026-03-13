@@ -97,6 +97,11 @@
           "pattern": "GetStudents({key})/enrollment:?query:",
           "name": "StudentEnrollmentDetails",
           "target": "StudentEnrollmentDetails"
+        },
+        {
+          "pattern": "GetStudents({key})/enrollment({key1})/course:?query:",
+          "name": "StudentCourseDetails",
+          "target": "StudentCourseDetails"
         }
       ],
       "targets": {
@@ -150,7 +155,24 @@
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {           
-              "entitySet": "GetEnrollments"              
+              "entitySet": "/GetEnrollments",
+                "navigation": {
+                "course": {
+                  "detail": {
+                    "route": "StudentCourseDetails"
+                  }
+                }
+              }              
+            }
+          }
+        },
+        "StudentCourseDetails":{
+          "type": "Component",
+          "id": "StudentCourseDetails",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {           
+              "entitySet": "/GetCourses"                             
             }
           }
         }

@@ -1,46 +1,6 @@
 using StudentSrv as service from '../../srv/StudentService';
-annotate service.GetStudents with @(
-    UI.FieldGroup #GeneratedGroup : {
-        $Type : 'UI.FieldGroupType',
-        Data : [
-            {
-                $Type : 'UI.DataField',
-                Label : 'Email',
-                Value : email,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'first_name',
-                Value : first_name,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'last_name',
-                Value : last_name,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'full_name',
-                Value : full_name,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'date_sign_up',
-                Value : date_sign_up,
-            },
-        ],
-    },
-    UI.Facets : [
-        {
-            $Type : 'UI.ReferenceFacet',
-            ID : 'GeneratedFacet1',
-            Label : 'General Information',
-            Target : '@UI.FieldGroup#GeneratedGroup',
-        },
-    ]
-);
 
-annotate StudentSrv.GetStudents with @(UI: {
+annotate service.GetStudents with @(UI: {
     LineItem                       : [
         {
             Label: 'Email',
@@ -68,7 +28,8 @@ annotate StudentSrv.GetStudents with @(UI: {
         $Type         : 'UI.HeaderInfoType',
         TypeName      : 'Student',
         TypeNamePlural: 'Students',
-        Title         : {value: full_name}
+        Title         : {Value: email},
+        Description   : { Value : full_name }
     },
 
     Facets : [
@@ -115,26 +76,34 @@ annotate StudentSrv.GetStudents with @(UI: {
 
 });
 
-annotate StudentSrv.GetEnrollments with @(
+annotate service.GetEnrollments with @(
     UI: {
       LineItem: 
         [
             { Label: 'Enrollment ID', Value: ID },
             { Label: 'Course ID',     Value: course_ID }
-        ]
+        ],
+        Facets : [        
+           {
+                $Type : 'UI.ReferenceFacet',
+                ID    : 'CourseDetails',
+                Label : 'Course Details',
+                Target: 'course/@UI.FieldGroup#StudentCourseInfo'
+           }
+       ] 
       }
 );
 
-annotate StudentSrv.GetCourses with @(
+annotate service.GetCourses with @(
     UI: {
        HeaderInfo                     : {
         $Type         : 'UI.HeaderInfoType',
         TypeName      : 'Course',
         TypeNamePlural: 'Courses',
-        Title         : {value: ID},
-        Description   : { value : course_name}
+        Title         : {Value: ID},
+        Description   : { Value : course_name}
     },
-     FieldGroup #StudentCourseInfo: {
+     FieldGroup#StudentCourseInfo: {
         Data: [ 
                 {
                     $Type: 'UI.DataField',
